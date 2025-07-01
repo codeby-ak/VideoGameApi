@@ -18,7 +18,7 @@ namespace VideoGameApi.Controllers
         }
 
         //[Authorize]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<List<VideoGame>>> GetVideoGame()
         {
