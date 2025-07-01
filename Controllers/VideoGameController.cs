@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using VideoGameApi.Data;
@@ -16,6 +17,8 @@ namespace VideoGameApi.Controllers
             _context = context;
         }
 
+        //[Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<ActionResult<List<VideoGame>>> GetVideoGame()
         {
